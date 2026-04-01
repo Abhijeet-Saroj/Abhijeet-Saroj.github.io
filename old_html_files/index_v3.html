@@ -467,10 +467,10 @@ footer {
 
 <footer>© 2025 ABHIJEET SAROJ &nbsp;·&nbsp; BUILT WITH PIXELS, RADAR &amp; COFFEE &nbsp;·&nbsp; TOKYO, JAPAN</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function () {
 
-<script>
-  // ── CONTACT FORM TOGGLE — must be global for onclick to work ──
+  // ── CONTACT FORM TOGGLE ──
   function toggleContactForm() {
     const formWrap = document.getElementById('contact-form-wrap');
     const btn = document.getElementById('contact-toggle-btn');
@@ -484,31 +484,26 @@ footer {
       setTimeout(() => formWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
     }
   }
+  window.toggleContactForm = toggleContactForm;
 
   // ── CONTACT FORM SUBMIT ──
-  document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('.contact-form');
-    const formSuccess = document.getElementById('form-success');
-    if (contactForm) {
-      contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const data = new FormData(contactForm);
-        const res = await fetch(contactForm.action, {
-          method: 'POST', body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          contactForm.reset();
-          formSuccess.style.display = 'block';
-          document.getElementById('contact-toggle-btn').innerHTML = '<span>⬡</span> Get In Touch';
-        }
+  const contactForm = document.querySelector('.contact-form');
+  const formSuccess = document.getElementById('form-success');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      const res = await fetch(contactForm.action, {
+        method: 'POST', body: data,
+        headers: { 'Accept': 'application/json' }
       });
-    }
-  });
-</script>
-
-<script>
-(function () {
+      if (res.ok) {
+        contactForm.reset();
+        formSuccess.style.display = 'block';
+        document.getElementById('contact-toggle-btn').innerHTML = '<span>⬡</span> Get In Touch';
+      }
+    });
+  }
 
   // ── HUD CLOCK ──
   const hudTime = document.getElementById('hud-time');
