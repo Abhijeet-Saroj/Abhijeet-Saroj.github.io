@@ -210,63 +210,7 @@ section { position: relative; z-index: 10; max-width: 1100px; margin: 0 auto; pa
   font-family: 'JetBrains Mono',monospace; font-size: 0.7rem; letter-spacing: 0.3em;
   color: var(--dim); margin-bottom: 2.5rem; text-transform: uppercase; line-height: 1.7;
 }
-/* ─── CONTACT FORM ─── */
-.contact-form {
-  max-width: 580px; margin: 2rem auto 0; text-align: left; position: relative; z-index: 1;
-}
-.contact-form .form-group {
-  margin-bottom: 1.4rem;
-}
-.contact-form label {
-  display: block;
-  font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
-  letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan);
-  margin-bottom: 0.5rem;
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%; background: rgba(0,212,255,0.04);
-  border: 1px solid rgba(0,212,255,0.2); color: var(--white);
-  font-family: 'Syne', sans-serif; font-size: 0.95rem;
-  padding: 0.85rem 1rem; border-radius: 2px; outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--cyan); box-shadow: 0 0 0 2px rgba(0,212,255,0.12);
-}
-.contact-form textarea { resize: vertical; min-height: 130px; }
-.contact-form input::placeholder,
-.contact-form textarea::placeholder { color: rgba(232,244,255,0.25); }
-.form-success {
-  display: none; text-align: center;
-  font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
-  letter-spacing: 0.2em; color: var(--teal);
-  padding: 1.2rem; border: 1px solid rgba(0,255,204,0.3);
-  background: rgba(0,255,204,0.05); margin-top: 1rem;
-}
-/* ─── FORM REVEAL ─── */
-#contact-form-wrap {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
-  opacity: 0;
-}
-#contact-form-wrap.open {
-  max-height: 700px; opacity: 1;
-}
-#contact-btn-wrap {
-  transition: margin 0.4s ease;
-}
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: 'Orbitron', sans-serif; font-size: 0.75rem; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  padding: 1rem 2rem; border: 1px solid rgba(232,244,255,0.2);
-  color: var(--dim); background: transparent;
-  border-radius: 2px; cursor: pointer;
-  transition: border-color 0.3s, color 0.3s, transform 0.2s;
-}
-.btn-secondary:hover { border-color: var(--red); color: var(--red); transform: translateY(-2px); }.btn-primary {
+.btn-primary {
   display: inline-flex; align-items: center; gap: 0.75rem;
   font-family: 'Orbitron',sans-serif; font-size: 0.75rem; font-weight: 700;
   letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
@@ -341,7 +285,7 @@ footer {
       <p>I believe the next frontier of humanitarian resilience lies in open, operational Earth Observation pipelines that make space-derived intelligence accessible to the communities that need it most.</p>
     </div>
     <div class="reveal">
-      <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">Years in Geospatial AI &amp; Remote Sensing</div></div>
+      <div class="stat-card"><div class="stat-num">4.5+</div><div class="stat-label">Years in Geospatial AI &amp; Remote Sensing</div></div>
       <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Satellite Scenes Processed</div></div>
       <div class="stat-card"><div class="stat-num">IIT Bombay</div><div class="stat-label">M.Tech Geoinformatics</div></div>
       <div class="stat-card"><div class="stat-num">JP</div><div class="stat-label">Based in Tokyo, Japan</div></div>
@@ -431,37 +375,7 @@ footer {
   <div class="contact-inner reveal">
     <h2 class="section-title" style="margin-bottom:1rem;">Let's Build Something<br>From Space, Down</h2>
     <p class="contact-sub">Open to collaborations in geospatial AI,<br>climate risk, and satellite data research.</p>
-
-    <!-- GET IN TOUCH BUTTON -->
-    <div id="contact-btn-wrap">
-      <button class="btn-primary" id="contact-toggle-btn" onclick="toggleContactForm()"><span>⬡</span> Get In Touch</button>
-    </div>
-
-    <!-- FORM — hidden by default, reveals on click -->
-    <div id="contact-form-wrap">
-      <form class="contact-form" action="https://formspree.io/f/mlgoldon" method="POST">
-        <div class="form-group">
-          <label for="name">// Your Name</label>
-          <input type="text" id="name" name="name" placeholder="John Doe" required />
-        </div>
-        <div class="form-group">
-          <label for="email">// Your Email</label>
-          <input type="email" id="email" name="email" placeholder="john@example.com" required />
-        </div>
-        <div class="form-group">
-          <label for="message">// Message</label>
-          <textarea id="message" name="message" placeholder="Tell me about your project or collaboration idea..." required></textarea>
-        </div>
-        <div style="text-align:center; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-          <button type="submit" class="btn-primary"><span>⬡</span> Send Message</button>
-          <button type="button" class="btn-secondary" onclick="toggleContactForm()">✕ &nbsp;Cancel</button>
-        </div>
-        <div class="form-success" id="form-success">
-          ✔ &nbsp; MESSAGE TRANSMITTED SUCCESSFULLY. I WILL GET BACK TO YOU SOON.
-        </div>
-      </form>
-    </div>
-
+    <a href="/cdn-cgi/l/email-protection#cfa7aaa3a3a08faeada7a6a5aaaabbbcaebda0a5e1aca0a2" class="btn-primary"><span>⬡</span> Get In Touch</a>
   </div>
 </section>
 
@@ -469,41 +383,6 @@ footer {
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function () {
-
-  // ── CONTACT FORM TOGGLE ──
-  function toggleContactForm() {
-    const formWrap = document.getElementById('contact-form-wrap');
-    const btn = document.getElementById('contact-toggle-btn');
-    const isOpen = formWrap.classList.contains('open');
-    if (isOpen) {
-      formWrap.classList.remove('open');
-      btn.innerHTML = '<span>⬡</span> Get In Touch';
-    } else {
-      formWrap.classList.add('open');
-      btn.innerHTML = '✕ &nbsp;Close';
-      setTimeout(() => formWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
-    }
-  }
-  window.toggleContactForm = toggleContactForm;
-
-  // ── CONTACT FORM SUBMIT ──
-  const contactForm = document.querySelector('.contact-form');
-  const formSuccess = document.getElementById('form-success');
-  if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const data = new FormData(contactForm);
-      const res = await fetch(contactForm.action, {
-        method: 'POST', body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        contactForm.reset();
-        formSuccess.style.display = 'block';
-        document.getElementById('contact-toggle-btn').innerHTML = '<span>⬡</span> Get In Touch';
-      }
-    });
-  }
 
   // ── HUD CLOCK ──
   const hudTime = document.getElementById('hud-time');
